@@ -1,45 +1,27 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Suspense, useState } from "react";
+import Flowers from "./components/Flowers";
+import { FadeIn, LeftMiddle } from "./components/styles";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
+  const [speed, setSpeed] = useState(1);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
-}
+    <div>
+      <Suspense fallback={null}>
+        <FadeIn>
+          <Flowers speed={speed} />
+        </FadeIn>
+      </Suspense>
 
-export default App
+      <LeftMiddle>
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={speed}
+          step="1"
+          onChange={(e) => setSpeed(e.target.value)}
+        />
+      </LeftMiddle>
+    </div>
+  );
+}

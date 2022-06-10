@@ -1,0 +1,36 @@
+.Container {
+  font-family: "Inter";
+  font-size: 16px;
+}
+
+.Overlay {
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+}
+
+.h1 {
+  padding: 0;
+  margin: 0 0 0.05em 0;
+  font-family: "Ayer Poster", serif;
+  font-weight: 400;
+  font-size: min(18vw, 14em);
+  line-height: 0.85em;
+}
+.Transition {
+  display: inline-block;
+  position: absolute !important;
+  transition: all 0.5s ease;
+  transition-property: all;
+  transition-property: opacity, transform;
+}
+
+/* .Transition[hidden] {
+  transition-delay: 0s;
+  opacity: 0;
+  transform: translate3d(0, -20px, 0) !important;
+}
+
+[hidden] {
+  display: none !important;
+} */
