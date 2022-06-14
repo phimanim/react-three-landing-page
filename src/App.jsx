@@ -1,6 +1,7 @@
 import { Suspense, useState } from "react";
 import Flowers from "./components/Flowers";
-import { FadeIn, LeftMiddle } from "./components/styles";
+import Overlay from "./components/Overlay";
+import { FadeIn, LeftMiddle, RightMiddle } from "./components/styles";
 
 export default function App() {
   const [speed, setSpeed] = useState(1);
@@ -22,6 +23,10 @@ export default function App() {
           onChange={(e) => setSpeed(e.target.value)}
         />
       </LeftMiddle>
+
+      <RightMiddle>
+    <Overlay/>
+      </RightMiddle>
     </div>
   );
 }

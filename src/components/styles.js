@@ -12,6 +12,16 @@ export const LeftMiddle = styled.div`
   transform: rotate(90deg) translate3d(50%, 0, 0);
   transform-origin: 100% 50%;
 `;
+export const RightMiddle = styled.div`
+  position: absolute;
+  bottom: 5vw;
+  left: 5vw;
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+  font-size: 16px;
+`;
 
 const fade = keyframes`
   from { opacity: 1; }
@@ -25,6 +35,5 @@ export const FadeIn = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: #ffd863;
   //animation: ${fade} 4s normal forwards ease-in-out;
 `

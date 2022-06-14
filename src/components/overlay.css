@@ -1,36 +1,39 @@
-.Container {
-  font-family: "Inter";
-  font-size: 16px;
+h1, h2{
+  padding:0;
+  margin-right: 10px;
 }
 
-.Overlay {
+@media only screen and (max-width: 660px) {
+  .StopAnimation > span{
+		animation: none !important;
+	}
+}
+
+.Scroller {
+  height: 1.2em;
+  line-height: 1.2em;
+  position: relative;
+  overflow: hidden;
+  width: 30em;
+}
+.Scroller > span {
   position: absolute;
-  top: 5vw;
-  left: 5vw;
+  top: 0;
+  animation: slide 7s infinite;
+  font-weight: bold;
+  
 }
-
-.h1 {
-  padding: 0;
-  margin: 0 0 0.05em 0;
-  font-family: "Ayer Poster", serif;
-  font-weight: 400;
-  font-size: min(18vw, 14em);
-  line-height: 0.85em;
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -1.2em;
+  }
+  50% {
+    top: -2.4em;
+  }
+  75% {
+    top: -3.6em;
+  }
 }
-.Transition {
-  display: inline-block;
-  position: absolute !important;
-  transition: all 0.5s ease;
-  transition-property: all;
-  transition-property: opacity, transform;
-}
-
-/* .Transition[hidden] {
-  transition-delay: 0s;
-  opacity: 0;
-  transform: translate3d(0, -20px, 0) !important;
-}
-
-[hidden] {
-  display: none !important;
-} */
